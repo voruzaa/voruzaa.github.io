@@ -1,3 +1,9 @@
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   margin: 0;
   background-color: #171717;
@@ -39,11 +45,20 @@ main {
 .part {
   border-top: 1px solid #383838;
   padding-block: 96px;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .part h2 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.part-number {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #C4F53A;
+  margin-right: 12px;
 }
 
 .floating-nav {
