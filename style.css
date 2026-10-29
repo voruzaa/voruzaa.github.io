@@ -74,6 +74,23 @@ main {
   background: repeating-linear-gradient(to right, #383838 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
 }
 
+.project-entry {
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid transparent;
+  background: repeating-linear-gradient(to right, #383838 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
+}
+
+.project-entry h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+}
+
+.project-entry p {
+  margin: 8px 0 16px;
+}
+
 .contact-content {
   width: 100%;
   margin-top: 40px;
@@ -99,19 +116,27 @@ main {
   list-style: none;
 }
 
-.contact-links a {
+.contact-links a,
+.project-link {
   color: #00BC7D;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
 
-.contact-links a:hover {
+.contact-links a:hover,
+.project-link:hover {
   text-decoration: underline;
 }
 
-.contact-links a:focus-visible {
+.contact-links a:focus-visible,
+.project-link:focus-visible {
   outline: 2px solid #00BC7D;
   outline-offset: 4px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 16px;
 }
 
 .skills-group + .skills-group {
@@ -123,7 +148,8 @@ main {
   font-size: 1rem;
 }
 
-.skills-group ul {
+.skills-group ul,
+.project-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -132,7 +158,8 @@ main {
   list-style: none;
 }
 
-.skills-group li {
+.skills-group li,
+.project-tech li {
   padding: 8px 14px;
   border: 1px solid #383838;
   border-radius: 999px;
