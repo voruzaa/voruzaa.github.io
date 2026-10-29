@@ -2,6 +2,7 @@ const nav = document.querySelector('.floating-nav');
 const indicator = nav.querySelector('.nav-indicator');
 const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
 const sections = links.map(link => document.querySelector(link.getAttribute('href')));
+const typewriterText = document.querySelector('.typewriter-text');
 let activeLink;
 let ticking = false;
 
@@ -20,6 +21,7 @@ function updateNavigation() {
     links.forEach(item => item.removeAttribute('aria-current'));
     link.setAttribute('aria-current', 'location');
     activeLink = link;
+    typewriterText.classList.toggle('is-typing', sections[index].id === 'home');
   }
 
   indicator.style.width = `${link.offsetWidth}px`;

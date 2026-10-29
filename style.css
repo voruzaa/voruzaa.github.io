@@ -121,6 +121,39 @@ h1 {
   line-height: 1.1;
 }
 
+.typewriter {
+  display: inline-grid;
+  vertical-align: baseline;
+}
+
+.typewriter::before {
+  content: "Voruza.";
+  visibility: hidden;
+  grid-area: 1 / 1;
+}
+
+.typewriter-text {
+  box-sizing: content-box;
+  grid-area: 1 / 1;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 0.08em solid #C4F53A;
+}
+
+.typewriter-text.is-typing {
+  animation: typewriter-type 3.6s steps(7) forwards, typewriter-caret 0.65s steps(1) infinite;
+}
+
+@keyframes typewriter-type {
+  0%, 8% { width: 0; }
+  55%, 100% { width: 100%; }
+}
+
+@keyframes typewriter-caret {
+  50% { border-color: transparent; }
+}
+
 p {
   margin: 16px 0 28px;
   color: #BDBDBD;
@@ -163,6 +196,13 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .typewriter-text,
+  .typewriter-text.is-typing {
+    width: 100%;
+    border-right: 0;
+    animation: none;
+  }
+
   .social-button,
   .floating-nav a,
   .nav-indicator {
