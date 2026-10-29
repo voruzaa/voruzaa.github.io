@@ -3,6 +3,32 @@ const indicator = nav.querySelector('.nav-indicator');
 const links = Array.from(nav.querySelectorAll('a[href^="#"]'));
 const sections = links.map(link => document.querySelector(link.getAttribute('href')));
 const typewriterText = document.querySelector('.typewriter-text');
+const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = themeToggle.querySelector('img');
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const isLight = theme === 'light';
+  themeIcon.src = isLight ? 'assets/sun-outline.svg' : 'assets/moon-outline.svg';
+  const label = isLight ? 'Switch to dark mode' : 'Switch to light mode';
+  themeToggle.setAttribute('aria-label', label);
+  themeToggle.title = label;
+}
+
+try {
+  setTheme(localStorage.getItem('theme') === 'light' ? 'light' : 'dark');
+} catch {
+  setTheme('dark');
+}
+
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  setTheme(nextTheme);
+  try {
+    localStorage.setItem('theme', nextTheme);
+  } catch {
+  }
+});
 let activeLink;
 let ticking = false;
 
