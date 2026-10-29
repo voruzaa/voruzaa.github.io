@@ -7,12 +7,15 @@ let activeLink;
 let ticking = false;
 
 function updateNavigation() {
-  const midpoint = window.innerHeight / 2;
+  const referencePoint = Math.min(101, window.innerHeight / 2);
   let index = sections.findIndex(section => {
     const rect = section.getBoundingClientRect();
-    return rect.top <= midpoint && rect.bottom > midpoint;
+    return rect.top <= referencePoint && rect.bottom > referencePoint;
   });
 
+  if (window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1) {
+    index = sections.length - 1;
+  }
   if (index === -1) index = 0;
   const link = links[index];
   const changed = activeLink !== link;

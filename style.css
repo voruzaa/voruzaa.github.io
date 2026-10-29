@@ -23,8 +23,6 @@ main {
 
 .hero,
 .part {
-  min-height: 100vh;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +33,8 @@ main {
 }
 
 .hero {
+  min-height: 100vh;
+  min-height: 100dvh;
   gap: 16px;
 }
 
@@ -44,9 +44,14 @@ main {
 
 .part {
   border-top: 1px solid #383838;
-  padding-block: 96px;
+  padding-block: 64px;
   align-items: flex-start;
   text-align: left;
+  scroll-margin-top: 100px;
+}
+
+.part > p:last-child {
+  margin-bottom: 0;
 }
 
 .part h2 {
@@ -57,7 +62,7 @@ main {
 .part-number {
   font-size: 0.85rem;
   font-weight: 400;
-  color: #C4F53A;
+  color: #00BC7D;
   margin-right: 12px;
 }
 
@@ -65,14 +70,16 @@ main {
   width: 100%;
   margin-top: 40px;
   padding-top: 24px;
-  border-top: 1px solid #383838;
+  border-top: 1px solid transparent;
+  background: repeating-linear-gradient(to right, #383838 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
 }
 
 .contact-content {
   width: 100%;
   margin-top: 40px;
   padding-top: 24px;
-  border-top: 1px solid #383838;
+  border-top: 1px solid transparent;
+  background: repeating-linear-gradient(to right, #383838 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
 }
 
 .contact-content h3 {
@@ -93,7 +100,7 @@ main {
 }
 
 .contact-links a {
-  color: #C4F53A;
+  color: #00BC7D;
   overflow-wrap: anywhere;
   text-decoration: none;
 }
@@ -103,7 +110,7 @@ main {
 }
 
 .contact-links a:focus-visible {
-  outline: 2px solid #C4F53A;
+  outline: 2px solid #00BC7D;
   outline-offset: 4px;
 }
 
@@ -139,7 +146,8 @@ main {
   width: 100%;
   margin-top: 40px;
   padding-top: 24px;
-  border-top: 1px solid #383838;
+  border-top: 1px solid transparent;
+  background: repeating-linear-gradient(to right, #383838 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
 }
 
 .education-entry p {
@@ -207,7 +215,7 @@ main {
   left: 0;
   height: calc(100% - 12px);
   border-radius: 999px;
-  background-color: #C4F53A;
+  background-color: #00BC7D;
   transition: transform 300ms ease, width 300ms ease;
   pointer-events: none;
 }
@@ -217,7 +225,7 @@ main {
 }
 
 .floating-nav:not(.nav-ready) a[aria-current] {
-  background-color: #C4F53A;
+  background-color: #00BC7D;
 }
 
 h1 {
@@ -244,7 +252,7 @@ h1 {
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  border-right: 0.08em solid #C4F53A;
+  border-right: 0.08em solid #00BC7D;
 }
 
 .typewriter-text.is-typing {
@@ -269,7 +277,7 @@ p {
 
 .floating-nav a:focus-visible,
 .social-button:focus-visible {
-  outline: 2px solid #C4F53A;
+  outline: 2px solid #00BC7D;
   outline-offset: 4px;
 }
 
