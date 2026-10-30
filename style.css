@@ -93,15 +93,10 @@ main {
   margin-right: 12px;
 }
 
-.skills-list {
-  width: 100%;
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid transparent;
-  background: repeating-linear-gradient(to right, var(--border-color) 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
-}
-
-.project-entry {
+.skills-list,
+.project-entry,
+.contact-content,
+.education-entry {
   width: 100%;
   margin-top: 40px;
   padding-top: 24px;
@@ -116,14 +111,6 @@ main {
 
 .project-entry p {
   margin: 8px 0 16px;
-}
-
-.contact-content {
-  width: 100%;
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid transparent;
-  background: repeating-linear-gradient(to right, var(--border-color) 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
 }
 
 .contact-content h3 {
@@ -197,11 +184,6 @@ main {
   display: grid;
   grid-template-columns: minmax(140px, 1fr) 2fr;
   gap: 24px;
-  width: 100%;
-  margin-top: 40px;
-  padding-top: 24px;
-  border-top: 1px solid transparent;
-  background: repeating-linear-gradient(to right, var(--border-color) 0 6px, transparent 6px 14px) top / 100% 1px no-repeat;
 }
 
 .education-entry p {
@@ -290,19 +272,23 @@ h1 {
 }
 
 .typewriter {
+  position: relative;
   display: inline-grid;
+  padding-right: 0.08em;
   vertical-align: baseline;
 }
 
 .typewriter::before {
-  content: "Voruza.";
+  content: "Forza.";
   visibility: hidden;
   grid-area: 1 / 1;
 }
 
 .typewriter-text {
+  position: absolute;
+  top: 0;
+  left: 0;
   box-sizing: content-box;
-  grid-area: 1 / 1;
   overflow: hidden;
   white-space: nowrap;
   width: 0;
@@ -310,12 +296,12 @@ h1 {
 }
 
 .typewriter-text.is-typing {
-  animation: typewriter-type 3.6s steps(7) forwards, typewriter-caret 0.65s steps(1) infinite;
+  animation: typewriter-type 3.6s steps(6) forwards, typewriter-caret 0.65s steps(1) infinite;
 }
 
 @keyframes typewriter-type {
   0%, 8% { width: 0; }
-  55%, 100% { width: 100%; }
+  55%, 100% { width: calc(100% - 0.08em); }
 }
 
 @keyframes typewriter-caret {
@@ -365,7 +351,7 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .typewriter-text,
   .typewriter-text.is-typing {
-    width: 100%;
+    width: calc(100% - 0.08em);
     border-right: 0;
     animation: none;
   }
