@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas class="star-field" aria-hidden="true"></canvas>
   <nav class="floating-nav" aria-label="Page sections">
     <span class="nav-indicator" aria-hidden="true"></span>
     <a href="#home" aria-current="location">VORUZA</a>
@@ -19,9 +20,6 @@
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
-    <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
-      <img src="assets/moon-outline.svg" alt="">
-    </button>
   </nav>
   <main>
     <section class="hero" id="home">
@@ -121,5 +119,6 @@
     </section>
   </main>
   <script src="script.js" defer></script>
+  <script src="starfield.js" defer></script>
 </body>
 </html>
