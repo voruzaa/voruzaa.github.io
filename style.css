@@ -288,20 +288,30 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  box-sizing: content-box;
-  overflow: hidden;
   white-space: nowrap;
-  width: 0;
   border-right: 0.08em solid var(--accent-color);
 }
 
+.typewriter-text::before {
+  content: "";
+}
+
 .typewriter-text.is-typing {
-  animation: typewriter-type 3.6s steps(6) forwards, typewriter-caret 0.65s steps(1) infinite;
+  animation: typewriter-caret 0.65s steps(1) infinite;
+}
+
+.typewriter-text.is-typing::before {
+  animation: typewriter-type 3.6s steps(1) forwards;
 }
 
 @keyframes typewriter-type {
-  0%, 8% { width: 0; }
-  55%, 100% { width: calc(100% - 0.08em); }
+  0% { content: ""; }
+  15.83% { content: "F"; }
+  23.67% { content: "Fo"; }
+  31.5% { content: "For"; }
+  39.33% { content: "Forz"; }
+  47.17% { content: "Forza"; }
+  55%, 100% { content: "Forza."; }
 }
 
 @keyframes typewriter-caret {
@@ -351,8 +361,13 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .typewriter-text,
   .typewriter-text.is-typing {
-    width: calc(100% - 0.08em);
     border-right: 0;
+    animation: none;
+  }
+
+  .typewriter-text::before,
+  .typewriter-text.is-typing::before {
+    content: "Forza.";
     animation: none;
   }
 
