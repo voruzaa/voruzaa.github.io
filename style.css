@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background: #0e0e0e;
+  --color-name: #f49871;
+  --color-white: #fff6ec;
+  --section-gap: 64px;
+  color-scheme: dark;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-background);
+}
+
+body {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  background: var(--color-background);
+}
+
+.container {
+  width: min(100%, 960px);
+  min-height: min(70vh, 720px);
+  padding: 36px;
+}
+
+.identity {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: static;
+}
+
+.identity p {
+  margin: 0;
+}
+
+.name {
+  color: var(--color-name);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.identity-separator {
+  color: var(--color-white);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.affiliation {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.letter-c,
+.letter-s {
+  color: #5b9dff;
+}
+
+.university {
+  color: #f06464;
+}
+
+.description {
+  margin: 24px 0 0;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.socials,
+.things {
+  margin-top: var(--section-gap);
+  color: var(--color-white);
+}
+
+.socials h2,
+.things h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.socials ul,
+.things ul {
+  margin: 16px 0 0;
+  padding-left: 4ch;
+  list-style: none;
+}
+
+.socials li,
+.things li {
+  position: relative;
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.socials li::before,
+.things li::before {
+  position: absolute;
+  left: -2ch;
+  content: "♥";
+}
+
+.social-link {
+  color: var(--color-name);
+  text-decoration: none;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 24px;
+  }
+}
